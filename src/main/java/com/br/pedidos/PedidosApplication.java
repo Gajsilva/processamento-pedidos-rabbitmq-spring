@@ -1,13 +1,13 @@
-package com.br.pay;
+package com.br.pedidos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PayApplication {
+public class PedidosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PayApplication.class, args);
+		SpringApplication.run(PedidosApplication.class, args);
 	}
 
 }
