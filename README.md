@@ -14,6 +14,12 @@ Este projeto demonstra um sistema simples de processamento de pedidos usando Spr
 
 1. **Configuração do RabbitMQ:**
    - Certifique-se de ter o RabbitMQ instalado localmente ou utilize uma instância em nuvem.
+   - Adicione um usuário no RabbitMQ via terminal:
+     ```bash
+     sudo rabbitmqctl add_user seu_usuario sua_senha
+     sudo rabbitmqctl set_user_tags seu_usuario administrator
+     sudo rabbitmqctl set_permissions -p / seu_usuario ".*" ".*" ".*"
+     ```
 
 2. **Configuração do Banco de Dados:**
    - Configure as propriedades do banco de dados no arquivo `src/main/resources/application.properties`. Exemplo usando H2 Database:
