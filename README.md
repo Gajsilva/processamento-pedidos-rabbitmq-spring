@@ -18,11 +18,25 @@ Este projeto demonstra um sistema simples de processamento de pedidos usando Spr
 2. **Configuração do Banco de Dados:**
    - Configure as propriedades do banco de dados no arquivo `src/main/resources/application.properties`. Exemplo usando H2 Database:
      ```properties
-     spring.datasource.url=jdbc:h2:mem:testdb
-     spring.datasource.driverClassName=org.h2.Driver
-     spring.datasource.username=sa
-     spring.datasource.password=password
-     spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+ server.servlet.context-path=/pedidos
+# Configura��o do Data Source
+spring.datasource.url=jdbc:h2:file:./h2-dadosLocal
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=sa
+
+# Configura��o do Console H2
+spring.h2.console.enabled=true
+spring.h2.console.settings.trace=false
+spring.h2.console.settings.web-allow-others=false
+spring.h2.console.path=/h2-console
+
+# Configura��o do JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.defer-datasource-initialization=true
+spring.jpa.show-sql=true
+logging.level.org.hibernate.SQL=DEBUG
      ```
 
 3. **Configuração da Fila:**
