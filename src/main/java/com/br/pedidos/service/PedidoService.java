@@ -18,14 +18,13 @@ public class PedidoService {
 
     @Value("${fila.pedidos}")
     private String filaPedidos;
-@Autowired
+    @Autowired
     private  PedidoRepository pedidoRepository;
 
 
     public void processarPedido(Pedido pedido) {
         // Salva o pedido no banco de dados
         pedidoRepository.save(pedido);
-
         // Coloca as informações do pedido na fila do RabbitMQ
         rabbitTemplate.convertAndSend(filaPedidos, pedido.getId());
     }
