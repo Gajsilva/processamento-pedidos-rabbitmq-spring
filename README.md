@@ -6,7 +6,7 @@ Este projeto demonstra um sistema simples de processamento de pedidos usando Spr
 
 - Spring Boot
 - Spring Data JPA
-- RabbitMQ
+- RabbitMQ http://localhost:15672
 - Spring Web
 - H2 Database (ou banco de dados de sua escolha)
 
